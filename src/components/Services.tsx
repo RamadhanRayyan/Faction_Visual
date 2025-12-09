@@ -99,7 +99,7 @@ export default function Services() {
           <h2 className="text-5xl font-bold text-black mb-6">Layanan Kami</h2>
           <div className="h-1 w-24 bg-red-600 mx-auto mb-4"></div>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Dua layanan utama untuk membangun dan mengembangkan kehadiran digital Anda
+            Dua layanan yang siap membangun dan mengembangkan branding digital Anda
           </p>
         </div>
 

@@ -32,7 +32,7 @@ export default function About() {
           <h2 className="text-5xl font-bold text-black mb-6">Tentang Kami</h2>
           <div className="h-1 w-24 bg-red-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 leading-relaxed mb-6">
-            <span className="font-semibold text-black">Faction Visual</span> adalah studio kreatif digital yang berfokus pada pembuatan website berkualitas tinggi.
+            <span className="font-semibold text-black">Faction Visual</span> adalah studio kreatif digital yang berfokus pada pembuatan website berkualitas.
           </p>
           <p className="text-lg text-gray-600 leading-relaxed">
             Kami menyediakan layanan profesional untuk pembuatan website company profile yang menampilkan identitas bisnis Anda secara elegan, serta website portfolio yang mempresentasikan karya-karya terbaik Anda dengan desain modern dan responsif.
