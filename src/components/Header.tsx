@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import logo from "../Assets/Faction Studio (1).png"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,9 +30,9 @@ export default function Header() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-red-600 flex items-center justify-center">
-            <span className="text-white font-bold text-xl">F</span>
-          </div>
+        <div className="w-10 h-10" >
+          <img src={logo} alt="logo" />
+        </div>
           <span className="text-2xl font-bold text-black">Faction Visual</span>
         </div>
 

@@ -1,3 +1,6 @@
+
+import logo from "../Assets/Faction Studio (1).png"
+
 export default function Footer() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -11,8 +14,8 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-red-600 flex items-center justify-center">
-              <span className="text-white font-bold text-xl">F</span>
+            <div className="w-10 h-10" >
+              <img src={logo} alt="logo" />
             </div>
             <span className="text-xl font-bold text-white">Faction Visual</span>
           </div>
