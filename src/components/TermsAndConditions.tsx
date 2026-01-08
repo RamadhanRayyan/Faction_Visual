@@ -88,7 +88,7 @@ export default function TermsAndConditions() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6 max-w-7xl mx-auto">
           {terms.map((term, index) => (
             <div
               key={index}
@@ -100,23 +100,23 @@ export default function TermsAndConditions() {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div
-                className={`h-full p-6 border-2 transition-all duration-300 hover:shadow-lg ${
+                className={`h-full p-3 md:p-6 border-2 transition-all duration-300 hover:shadow-lg ${
                   term.accent
                     ? 'bg-red-50 border-red-600 hover:border-red-700'
                     : 'bg-gray-50 border-gray-200 hover:border-red-600'
                 }`}
               >
                 <div
-                  className={`mb-4 ${
+                  className={`mb-2 md:mb-4 scale-75 md:scale-100 origin-left ${
                     term.accent ? 'text-red-600' : 'text-black'
                   }`}
                 >
                   {term.icon}
                 </div>
-                <h3 className="text-xl font-bold text-black mb-3">
+                <h3 className="text-xs md:text-xl font-bold text-black mb-1 md:mb-3">
                   {term.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 text-[10px] md:text-base leading-relaxed">
                   {term.description}
                 </p>
               </div>

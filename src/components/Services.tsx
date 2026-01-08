@@ -12,7 +12,6 @@ import {
   GraduationCapIcon,
   BookOpenIcon,
   X,
-  BugPlay,
   PlaySquareIcon,
 } from 'lucide-react';
 
