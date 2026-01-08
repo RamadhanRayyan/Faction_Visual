@@ -8,6 +8,9 @@ import {
   Play,
   MessageSquare,
   Layout,
+  PlayCircle,
+  GraduationCapIcon,
+  BookOpenIcon,
 } from 'lucide-react';
 
 export default function Services() {
@@ -90,6 +93,65 @@ export default function Services() {
         },
       ],
     },
+    {
+      icon: <Building2 size={48} />,
+      title: 'Website Landing Page',
+      subtitle: 'Representasi Digital yang efektif',
+      description:
+        'Faction Visual menyediakan layanan pembuatan website landing page yang efektif, informatif, dan menjadi representasi yang super efektif. Website yang kami buat dirancang untuk membangun kepercayaan, memperkuat branding, dan memberikan informasi bisnis Anda dengan cara yang paling efektif.',
+      features: [
+        {
+          icon: <Layout size={20} />,
+          text: 'Hook yang menarik dan efektif',
+        },
+        {
+          icon: <Globe size={20} />,
+          text: 'Informasi bisnis yang jelas dan terstruktur',
+        },
+        {
+          icon: <Image size={20} />,
+          text: 'Presentasi visual yang efektif',
+        },
+        {
+          icon: <Play size={20} />,
+          text: 'Animasi halus dan transisi',
+        },
+        {
+          icon: <MessageSquare size={20} />,
+          text: 'CTA yang memudahkan client menghubungi',
+        },
+      ],
+    },
+    {
+  icon: <GraduationCapIcon size={48} />,
+  title: 'Website Educational / E-Learning',
+  subtitle: 'Platform Pembelajaran Digital yang Terstruktur',
+  description:
+    'Faction Visual menyediakan layanan pembuatan website educational dan e-learning yang modern, terstruktur, dan mudah digunakan. Website dirancang untuk mendukung proses belajar mengajar secara efektif, menyajikan materi dengan jelas, serta memberikan pengalaman belajar yang interaktif dan profesional bagi siswa maupun pengajar.',
+  features: [
+    {
+      icon: <BookOpenIcon size={20} />,
+      text: 'Penyajian materi pembelajaran yang rapi dan sistematis',
+    },
+    {
+      icon: <Layout size={20} />,
+      text: 'Dashboard user-friendly untuk siswa dan pengajar',
+    },
+    {
+      icon: <Play size={20} />,
+      text: 'Dukungan video, modul, dan konten interaktif',
+    },
+    {
+      icon: <PlayCircle size={20} />,
+      text: 'Sistem evaluasi, kuis, dan progres belajar',
+    },
+    {
+      icon: <MessageSquare size={20} />,
+      text: 'Manajemen kelas dan interaksi siswa–pengajar',
+    },
+  ],
+}
+
   ];
 
   return (

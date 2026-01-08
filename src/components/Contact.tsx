@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
         <a
           href="https://www.instagram.com/rmaaapacik/"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener noreferrer"z
           className="w-full text-center px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 transition transform hover:-translate-y-1 shadow-lg"
         >
           Instagram

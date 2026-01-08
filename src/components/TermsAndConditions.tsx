@@ -33,8 +33,8 @@ export default function TermsAndConditions() {
   const terms = [
     {
       icon: <CreditCard size={24} />,
-      title: 'Down Payment 20%',
-      description: 'Down payment sebesar 20% dari total project sebagai Project Initiation Fee wajib dilunasi sebelum pengerjaan dimulai.',
+      title: 'Down Payment 40%',
+      description: 'Down payment sebesar 40% dari total project sebagai Project Initiation Fee wajib dilunasi sebelum pengerjaan dimulai.',
       accent: true,
     },
     {
@@ -65,7 +65,7 @@ export default function TermsAndConditions() {
     {
       icon: <DollarSign size={24} />,
       title: 'Pembayaran Tahap Akhir',
-      description: 'Pembayaran 80% sisanya harus dilunasi sebelum file final dan access website diserahkan kepada client.',
+      description: 'Pembayaran 60% sisanya harus dilunasi sebelum file final dan access website diserahkan kepada client.',
       accent: true,
     },
     {
