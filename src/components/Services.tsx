@@ -11,10 +11,14 @@ import {
   PlayCircle,
   GraduationCapIcon,
   BookOpenIcon,
+  X,
+  BugPlay,
+  PlaySquareIcon,
 } from 'lucide-react';
 
 export default function Services() {
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedService, setSelectedService] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -24,7 +28,7 @@ export default function Services() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.05 }
     );
 
     if (sectionRef.current) {
@@ -94,7 +98,7 @@ export default function Services() {
       ],
     },
     {
-      icon: <Building2 size={48} />,
+      icon: <PlaySquareIcon size={48} />,
       title: 'Website Landing Page',
       subtitle: 'Representasi Digital yang efektif',
       description:
@@ -155,17 +159,17 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" ref={sectionRef} className="py-24 bg-white">
+    <section id="services" ref={sectionRef} className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-black mb-6">Layanan Kami</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-black mb-6">Layanan Kami</h2>
           <div className="h-1 w-24 bg-red-600 mx-auto mb-4"></div>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Dua layanan yang siap membangun dan mengembangkan branding digital Anda
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 gap-3 md:gap-10 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <div
               key={index}
@@ -176,54 +180,116 @@ export default function Services() {
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <div className="bg-white border-2 border-gray-900 p-8 hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
-                <div className="text-red-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div 
+                onClick={() => setSelectedService(index)}
+                className="bg-white border-2 border-gray-900 p-3 md:p-8 hover:shadow-2xl transition-all duration-500 group h-full flex flex-col cursor-pointer md:cursor-default"
+              >
+                <div className="text-red-600 mb-3 md:mb-6 group-hover:scale-110 transition-transform duration-300 origin-left scale-75 md:scale-100">
                   {service.icon}
                 </div>
 
-                <h3 className="text-3xl font-bold text-black mb-2">
+                <h3 className="text-xs md:text-3xl font-bold text-black mb-0 md:mb-2 leading-tight text-center md:text-left">
                   {service.title}
                 </h3>
-                <p className="text-red-600 text-sm font-semibold mb-4">
-                  {service.subtitle}
+                <p className="text-[10px] text-gray-400 mt-2 md:hidden text-center italic">
+                  Klik untuk selengkapnya
                 </p>
+                <div className="hidden md:block">
+                  <p className="text-red-600 text-sm font-semibold mb-4">
+                    {service.subtitle}
+                  </p>
 
-                <p className="text-gray-700 mb-8 leading-relaxed flex-grow">
-                  {service.description}
-                </p>
+                  <p className="text-gray-700 mb-8 leading-relaxed">
+                    {service.description}
+                  </p>
 
-                <div className="space-y-4 mb-8">
-                  {service.features.map((feature, featureIndex) => (
-                    <div
-                      key={featureIndex}
-                      className="flex items-start space-x-4 group/item"
-                    >
-                      <div className="flex-shrink-0 mt-1 text-red-600 group-hover/item:scale-125 transition-transform duration-300">
-                        {feature.icon}
+                  <div className="space-y-4 mb-8">
+                    {service.features.map((feature, featureIndex) => (
+                      <div
+                        key={featureIndex}
+                        className="flex items-start space-x-4 group/item"
+                      >
+                        <div className="flex-shrink-0 mt-1 text-red-600 group-hover/item:scale-125 transition-transform duration-300">
+                          {feature.icon}
+                        </div>
+                        <p className="text-gray-700 leading-relaxed">
+                          {feature.text}
+                        </p>
                       </div>
-                      <p className="text-gray-700 leading-relaxed">
-                        {feature.text}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
 
-                <a
-                  href="https://wa.me/6287731213462"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-red-600 font-bold inline-flex items-center space-x-2 hover:space-x-3 transition-all duration-300 text-lg group/btn"
-                >
-                  <span>Pelajari Lebih Lanjut</span>
-                  <ArrowRight
-                    className="group-hover/btn:translate-x-1 transition-transform duration-300"
-                    size={20}
-                  />
-                </a>
+                  <a
+                    href="https://wa.me/6287731213462"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-red-600 font-bold inline-flex items-center space-x-2 hover:space-x-3 transition-all duration-300 text-lg group/btn"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <span>Pelajari Lebih Lanjut</span>
+                    <ArrowRight
+                      className="group-hover/btn:translate-x-1 transition-transform duration-300"
+                      size={20}
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Modal for Mobile */}
+        {selectedService !== null && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 md:hidden backdrop-blur-sm">
+            <div className="bg-white w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl p-6 relative animate-in fade-in zoom-in duration-300">
+              <button
+                onClick={() => setSelectedService(null)}
+                className="absolute top-4 right-4 text-gray-500 hover:text-black transition-colors"
+              >
+                <X size={24} />
+              </button>
+
+              <div className="text-red-600 mb-4">
+                {services[selectedService].icon}
+              </div>
+
+              <h3 className="text-2xl font-bold text-black mb-2">
+                {services[selectedService].title}
+              </h3>
+              
+              <p className="text-red-600 text-sm font-semibold mb-4">
+                {services[selectedService].subtitle}
+              </p>
+
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                {services[selectedService].description}
+              </p>
+
+              <div className="space-y-4 mb-8">
+                {services[selectedService].features.map((feature, idx) => (
+                  <div key={idx} className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 mt-1 text-red-600">
+                      {feature.icon}
+                    </div>
+                    <p className="text-gray-700 text-sm">
+                      {feature.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="https://wa.me/6287731213462"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-red-600 text-white font-bold py-3 px-6 rounded flex items-center justify-center space-x-2 hover:bg-red-700 transition-colors"
+              >
+                <span>Hubungi Kami</span>
+                <ArrowRight size={20} />
+              </a>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
