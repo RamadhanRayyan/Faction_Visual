@@ -219,7 +219,7 @@ export default function Services() {
                   </div>
 
                   <a
-                    href="https://wa.me/6287731213462"
+                    href="https://wa.me/6283126458360"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-red-600 font-bold inline-flex items-center space-x-2 hover:space-x-3 transition-all duration-300 text-lg group/btn"
@@ -278,7 +278,7 @@ export default function Services() {
               </div>
 
               <a
-                href="https://wa.me/6287731213462"
+                href="https://wa.me/6283126458360"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-red-600 text-white font-bold py-3 px-6 rounded flex items-center justify-center space-x-2 hover:bg-red-700 transition-colors"
